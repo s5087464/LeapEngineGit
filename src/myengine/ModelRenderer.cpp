@@ -24,10 +24,6 @@ namespace myengine
 		);
 		m_shader.view(view);
 
-		// シェーダーの設定
-		m_shader.depth_test(true);
-		m_shader.lighting(true);
-		m_shader.textures(true);
 
 		// モデルの描画
 		m_shader.render();
