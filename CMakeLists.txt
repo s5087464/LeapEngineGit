@@ -36,6 +36,7 @@ add_library(rend
 add_library(leap
   src/leap/ExampleConnection.h
   src/leap/ExampleConnection.c
+  src/leap/LeapSample.c
 )
   target_link_libraries(leap leapc)
 
