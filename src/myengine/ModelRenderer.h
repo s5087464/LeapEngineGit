@@ -1,4 +1,5 @@
 #pragma once
+
 #include <memory>
 #include "Component.h"
 #include "Texture.h"
@@ -25,3 +26,4 @@ namespace myengine
 		//void SetMesh(std::shared_ptr<Texture> _texture) { m_texture = _texture; }
 	};
 }
+
