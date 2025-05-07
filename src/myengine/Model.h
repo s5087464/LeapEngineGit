@@ -19,7 +19,7 @@ namespace myengine
 		void onLoad();
 		//void on_render();
 		
-		
+		std::shared_ptr<rend::Model> getModel() { return m_model; }
 		
 	private:
 		std::shared_ptr<rend::Model> m_model;

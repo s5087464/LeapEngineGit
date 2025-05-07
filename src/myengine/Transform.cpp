@@ -7,6 +7,7 @@ namespace myengine
 		m_position = glm::vec3(0, 0, -10);// remove me
 		m_scale = glm::vec3(1, 1, 1);
 	}
+
 	glm::mat4 Transform::model()
 	{
 		glm::mat4 rtn(1.0f);		
