@@ -1,20 +1,24 @@
 #include "ModelRenderer.h"
 #include "Entity.h"
 #include "Transform.h"
-#include "rend/ModelShader.h"
+
 
 namespace myengine
 {
+	void ModelRenderer::on_initialize()
+	{
+		m_mesh = rend::Mesh(rend::TRIANGLE_MESH);
+	}
+
 	void ModelRenderer::on_render()
 	{
 		if (!m_model) return;
 		
+		std::cout << "ModelRenderer::on_render" << std::endl;
+
 		// モデル行列の設定
 		glm::mat4 model = entity()->get_component<Transform>()->model();
 		m_shader.model(model);
-
-		// プロジェクション行列の設定
-		m_shader.projection(rend::perspective(45.0f, 1.0f, 0.1f, 100.0f));
 
 		// ビュー行列の設定（カメラ位置を設定）
 		glm::mat4 view = glm::lookAt(
@@ -24,15 +28,19 @@ namespace myengine
 		);
 		m_shader.view(view);
 
+		// プロジェクション行列の設定
+		m_shader.projection(rend::perspective(45.0f, 1.0f, 0.1f, 100.0f));
+
+		m_mesh.texcoords();
+
+
+
 
 		// モデルの描画
 		m_shader.render();
 	}
 
-	void ModelRenderer::on_initialize()
-	{
-		// m_shader = std::make_shared<rend::ModelShader>();
-	}
+	
 }
 
 

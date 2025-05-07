@@ -1,9 +1,9 @@
 #pragma once
 
 #include "Component.h"
-#include <Leap.h>
+#include <LeapC.h>
 #include "Model.h"
-#include "ModelShader.h"
+#include "rend/ModelShader.h"
 
 namespace myengine
 {
@@ -18,6 +18,6 @@ namespace myengine
         Leap::Controller controller;
         std::vector<Leap::Hand> hands;
         std::shared_ptr<Model> handModel;
-        std::shared_ptr<ModelShader> handShader;
+        std::shared_ptr<rend::ModelShader> handShader;
     };
 } 
