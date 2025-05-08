@@ -1,6 +1,6 @@
 #include "ModelRenderer.h"
 #include "Entity.h"
-#include "Transform.h"
+#include "HandTransform.h"
 
 namespace myengine
 {
@@ -41,14 +41,14 @@ namespace myengine
 
 		// ビュー行列の設定（カメラ位置を設定）
 		glm::mat4 view = glm::lookAt(
-			glm::vec3(0.0f, 0.0f, 5.0f),  // カメラ位置
+			glm::vec3(0.0f, 2.0f, 8.0f),  // カメラ位置
 			glm::vec3(0.0f, 0.0f, 0.0f),  // 注視点
 			glm::vec3(0.0f, 10.0f, 0.0f)   // 上方向
 		);
 		m_shader.view(view);
 
 		// モデル行列の設定
-		glm::mat4 model = entity()->get_component<Transform>()->model();
+		glm::mat4 model = entity()->get_component<HandTransform>()->model();
 		m_shader.model(model);
 
 		// シェーダーの設定

@@ -44,13 +44,17 @@ int main()
 	// Add a player component to the player entity
 	std::shared_ptr <Player> player = entity->add_component<Player>();
 	// Model
-	std::cout << "Loading curuthers" << std::endl;
-	std::shared_ptr <Model> cruthers = core->resources()->load<Model>("models/curuthers/curuthers");
-	std::cout << "Loading palm" << std::endl;
+	// std::cout << "Loading curuthers" << std::endl;
+	// std::shared_ptr <Model> cruthers = core->resources()->load<Model>("models/curuthers/curuthers");
+	// std::cout << "Loading palm" << std::endl;
 	std::shared_ptr <Model> palm = core->resources()->load<Model>("models/hand/palm");
 	std::shared_ptr<ModelRenderer> mr = entity->add_component<ModelRenderer>();
 	mr->setModel(palm);
-	mr->setModel(cruthers);
+	//mr->setModel(cruthers);
+	// Leap
+	std::shared_ptr<HandTransform> ht = entity->add_component<HandTransform>();
+	ht->on_tick();
+	
 
 	//////////////////////////////////////////////////////////////////
 	// Light
@@ -67,7 +71,7 @@ int main()
 
 	
 	// Add a triangle renderer component to the player entity
-	std::shared_ptr <TriangleRenderer> tr = entity->add_component<TriangleRenderer>();
+	// std::shared_ptr <TriangleRenderer> tr = entity->add_component<TriangleRenderer>();
 	
 
 	//std::shared_ptr <Model> model = handEntity->add_component<Model>();

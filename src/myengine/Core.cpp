@@ -2,6 +2,8 @@
 #include "Entity.h"
 #include "Window.h"
 #include "Transform.h"
+#include "HandTransform.h"
+#include "LeapInitialize.h"
 #include "Resources.h"
 #include "Sound.h"
 #include "Model.h"
@@ -53,11 +55,11 @@ namespace myengine
 
 		// Model
 		rtn->m_model = std::make_shared <Model>();
-		
-		// Keyboard
-		//rtn->m_keyboard = std::make_shared<Keyboard>();
-		//rtn->m_keyboard->m_core = rtn;
 
+		
+		std::shared_ptr<LeapInitialize> li;
+		li->OnConnect();
+		li->OnDevice();
 
 		rtn->m_self = rtn;
 
@@ -75,6 +77,8 @@ namespace myengine
 		m_entities.push_back(rtn);
 
 		rtn->add_component<Transform>();
+		// rtn->add_component<LeapInitialize>();
+		// rtn->add_component<HandTransform>();
 		
 		std::cout << rtn->m_core.lock().get() << std::endl;
 
@@ -101,10 +105,6 @@ namespace myengine
 				else if (event.type == SDL_KEYDOWN)
 				{
 					sys::out("Event\n");
-					/*if (m_keyboard->GetKeyPressed(SDLK_a))
-					{
-						
-					}*/
 				}
 			}
 

@@ -72,6 +72,8 @@ add_library(myengine
   src/myengine/Camera.cpp
   src/myengine/HandTransform.h
   src/myengine/HandTransform.cpp
+  src/myengine/LeapInitialize.h
+  src/myengine/LeapInitialize.cpp
 
  )
 target_link_libraries(myengine rend leap SDL2 openal32 leapc)
