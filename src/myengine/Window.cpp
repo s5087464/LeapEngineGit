@@ -7,8 +7,8 @@ namespace myengine
 
 	Window::Window()
 	{
-		int winw = 800;
-		int winh = 600;
+		int winw = 1200;
+		int winh = 800;
 
 		m_raw = SDL_CreateWindow("MyEngine Demo",
 		  SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,

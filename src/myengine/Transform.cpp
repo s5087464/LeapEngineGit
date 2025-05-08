@@ -10,7 +10,7 @@ namespace myengine
 
 	glm::mat4 Transform::model()
 	{
-		glm::mat4 rtn(1.0f);		
+		glm::mat4 rtn(1.0f);
 
 		rtn = glm::translate(rtn, m_position);
 		rtn = glm::rotate(rtn, glm::radians(m_rotation.x), glm::vec3(1, 0, 0));

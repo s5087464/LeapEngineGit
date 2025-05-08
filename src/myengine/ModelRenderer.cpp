@@ -6,7 +6,7 @@ namespace myengine
 {
 	void ModelRenderer::on_initialize()
 	{
-		m_mesh = rend::Mesh(rend::TRIANGLE_MESH);
+		//m_mesh = rend::Mesh(rend::TRIANGLE_MESH);
 		// モデルの初期化
 		if (!m_model)
 		{
@@ -41,9 +41,9 @@ namespace myengine
 
 		// ビュー行列の設定（カメラ位置を設定）
 		glm::mat4 view = glm::lookAt(
-			glm::vec3(0.0f, 0.0f, 3.0f),  // カメラ位置
+			glm::vec3(0.0f, 0.0f, 5.0f),  // カメラ位置
 			glm::vec3(0.0f, 0.0f, 0.0f),  // 注視点
-			glm::vec3(0.0f, 1.0f, 0.0f)   // 上方向
+			glm::vec3(0.0f, 10.0f, 0.0f)   // 上方向
 		);
 		m_shader.view(view);
 

@@ -70,8 +70,8 @@ add_library(myengine
   src/myengine/Keyboard.cpp
   src/myengine/Camera.h
   src/myengine/Camera.cpp
-  src/myengine/HandData.h
-  src/myengine/HandData.cpp
+  src/myengine/HandTransform.h
+  src/myengine/HandTransform.cpp
 
  )
 target_link_libraries(myengine rend leap SDL2 openal32 leapc)

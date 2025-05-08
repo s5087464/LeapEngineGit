@@ -13,7 +13,7 @@
 #include "Sound.h"
 #include "Model.h"
 #include "Keyboard.h"
-#include "HandData.h"
+#include "HandTransform.h"
 #include "ModelRenderer.h"
 
 #endif
