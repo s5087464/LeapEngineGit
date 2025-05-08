@@ -8,7 +8,7 @@ namespace myengine
 	void HandTransform::on_tick()
 	{
 		// m_position = glm::vec3(0, 0, -10);
-		m_scale = glm::vec3(1, 1, 1);
+		m_scale = glm::vec3(0.1, 1, 1);
 		
 		// LeapInitializeコンポーネントを取得
 		//m_leap = entity()->get_component<LeapInitialize>();
