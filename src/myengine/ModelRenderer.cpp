@@ -55,6 +55,7 @@ namespace myengine
 		m_shader.depth_test(true);  // 深度テストを有効化
 		m_shader.lighting(true);    // ライティングを有効化
 		m_shader.textures(true);    // テクスチャを有効化
+		m_shader.color(glm::vec4(10.0));
 
 		// m_mesh.texcoords();
 
