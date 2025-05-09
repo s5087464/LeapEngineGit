@@ -57,9 +57,6 @@ int main()
 	// Add a player component to the player entity
 	std::shared_ptr <Player> player = entity->add_component<Player>();
 	// Model
-	// std::cout << "Loading curuthers" << std::endl;
-	// std::shared_ptr <Model> cruthers = core->resources()->load<Model>("models/curuthers/curuthers");
-	//mr->setModel(cruthers);
 	std::cout << "Loading palm" << std::endl;
 	std::shared_ptr <Model> palm = core->resources()->load<Model>("models/hand/palm");
 	std::shared_ptr<ModelRenderer> mr = entity->add_component<ModelRenderer>();
@@ -112,9 +109,6 @@ int main()
 
 	// Audio
 	std::shared_ptr <Sound> sound = core->resources()->load<Sound>("sounds/gamestart");
-
-	
-	
 
 	// Texture
 	// std::shared_ptr <Texture> texture = core->resources()->load<Texture>("textures/cat");
