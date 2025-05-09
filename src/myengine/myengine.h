@@ -16,5 +16,6 @@
 #include "LeapInitialize.h"
 #include "HandTransform.h"
 #include "ModelRenderer.h"
+#include "Collision.h"
 
 #endif

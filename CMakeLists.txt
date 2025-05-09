@@ -74,7 +74,8 @@ add_library(myengine
   src/myengine/HandTransform.cpp
   src/myengine/LeapInitialize.h
   src/myengine/LeapInitialize.cpp
-
+  src/myengine/Collision.h
+  src/myengine/Collision.cpp
  )
 target_link_libraries(myengine rend leap SDL2 openal32 leapc)
 
