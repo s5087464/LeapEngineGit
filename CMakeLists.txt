@@ -76,6 +76,18 @@ add_library(myengine
   src/myengine/LeapInitialize.cpp
   src/myengine/Collision.h
   src/myengine/Collision.cpp
+  src/myengine/CollisionManager.h
+  src/myengine/CollisionManager.cpp
+  src/myengine/LightModel.h
+  src/myengine/LightModel.cpp
+  src/myengine/LightRenderer.h
+  src/myengine/LightRenderer.cpp
+  src/myengine/BoxModel.h
+  src/myengine/BoxModel.cpp
+  src/myengine/BoxRenderer.h
+  src/myengine/BoxRenderer.cpp
+  src/myengine/TransformA.h
+  src/myengine/TransformA.cpp
  )
 target_link_libraries(myengine rend leap SDL2 openal32 leapc)
 

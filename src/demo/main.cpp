@@ -32,6 +32,19 @@ struct Light : Component
 	}
 };
 
+struct Box : Component
+{
+	void on_initialize()
+	{
+		printf("Box::initialize\n");
+	}
+
+	void on_tick()
+	{
+		printf("Box::tick\n");
+	}
+};
+
 int main()
 {
 	std::shared_ptr<Core> core = Core::initialize();
@@ -46,14 +59,16 @@ int main()
 	// Model
 	// std::cout << "Loading curuthers" << std::endl;
 	// std::shared_ptr <Model> cruthers = core->resources()->load<Model>("models/curuthers/curuthers");
-	// std::cout << "Loading palm" << std::endl;
+	//mr->setModel(cruthers);
+	std::cout << "Loading palm" << std::endl;
 	std::shared_ptr <Model> palm = core->resources()->load<Model>("models/hand/palm");
 	std::shared_ptr<ModelRenderer> mr = entity->add_component<ModelRenderer>();
 	mr->setModel(palm);
-	//mr->setModel(cruthers);
 	// Leap
 	std::shared_ptr<HandTransform> ht = entity->add_component<HandTransform>();
 	ht->on_tick();
+	// Collision
+	// std::shared_ptr<Collision> co = entity->add_component<Collision>();
 	
 
 	//////////////////////////////////////////////////////////////////
@@ -63,10 +78,26 @@ int main()
 	std::shared_ptr <Entity> lightEntity = core->add_entity();
 	// Add a hand component to the hand entity
 	std::shared_ptr <Light> light = lightEntity->add_component<Light>();
+	// Model
+	std::cout << "Loading light" << std::endl;
+	std::shared_ptr <LightModel> lighting = core->resources()->load<LightModel>("models/switch/light");
+	std::shared_ptr<LightRenderer> lr = lightEntity->add_component<LightRenderer>();
+	lr->setModel(lighting);
+
 
 	//////////////////////////////////////////////////////////////////
 	// SwitchBox
 	//////////////////////////////////////////////////////////////////
+	// Create a hand entity
+	std::shared_ptr <Entity> boxEntity = core->add_entity();
+	// Add a hand component to the hand entity
+	std::shared_ptr <Box> box = boxEntity->add_component<Box>();
+	// Model
+	std::cout << "Loading Box" << std::endl;
+	std::shared_ptr <BoxModel> switchBox = core->resources()->load<BoxModel>("models/switch/SwitchA");
+	std::shared_ptr<BoxRenderer> br = boxEntity->add_component<BoxRenderer>();
+	br->setModel(switchBox);
+	std::shared_ptr<TransformA> ta = entity->add_component<TransformA>();
 
 
 	

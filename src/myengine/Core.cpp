@@ -2,11 +2,11 @@
 #include "Entity.h"
 #include "Window.h"
 #include "Transform.h"
+#include "TransformA.h"
 #include "HandTransform.h"
 #include "LeapInitialize.h"
 #include "Resources.h"
 #include "Sound.h"
-#include "Model.h"
 
 #include "SDL2/SDL.h"
 #include <AL/al.h>
@@ -54,9 +54,9 @@ namespace myengine
 		}*/
 
 		// Model
-		rtn->m_model = std::make_shared <Model>();
+		// rtn->m_model = std::make_shared <Model>();
 
-		
+		// Leap
 		std::shared_ptr<LeapInitialize> li;
 		li->OnConnect();
 		li->OnDevice();
@@ -77,8 +77,9 @@ namespace myengine
 		m_entities.push_back(rtn);
 
 		rtn->add_component<Transform>();
+		rtn->add_component<TransformA>();
 		// rtn->add_component<LeapInitialize>();
-		// rtn->add_component<HandTransform>();
+		rtn->add_component<HandTransform>();
 		
 		std::cout << rtn->m_core.lock().get() << std::endl;
 

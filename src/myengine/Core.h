@@ -29,7 +29,7 @@ namespace myengine
 		std::shared_ptr<Resources> m_resources;
 
 		std::shared_ptr<Sound> m_sound;
-		std::shared_ptr<Model> m_model;
+		// std::shared_ptr<Model> m_model;
 		//std::shared_ptr<Keyboard> m_keyboard;
 		
 	};
