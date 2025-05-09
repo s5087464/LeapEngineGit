@@ -72,7 +72,7 @@ int main()
 	
 
 	//////////////////////////////////////////////////////////////////
-	// Light
+	// Lighting
 	//////////////////////////////////////////////////////////////////
 	// Create a hand entity
 	std::shared_ptr <Entity> lightEntity = core->add_entity();
@@ -111,7 +111,7 @@ int main()
 
 
 	// Audio
-	std::shared_ptr <Sound> sound = core->resources()->load<Sound>("sounds/dixie_horn");
+	std::shared_ptr <Sound> sound = core->resources()->load<Sound>("sounds/gamestart");
 
 	
 	

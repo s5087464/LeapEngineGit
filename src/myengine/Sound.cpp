@@ -33,10 +33,10 @@ namespace myengine
 		
 		alGenSources(1, &sourceID);
 
-		float vol = 0.04;
+		float vol = 1.0;
 		alSourcei(sourceID, AL_BUFFER, id);
 		alSource3f(sourceID, AL_POSITION, 0.0f, 0.0f, 0.0f);
-		alSourcef(sourceID, AL_PITCH, 2);
+		alSourcef(sourceID, AL_PITCH, 1);
 		alSourcef(sourceID, AL_GAIN, vol);
 		
 		alSourcePlay(sourceID);

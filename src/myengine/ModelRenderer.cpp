@@ -21,9 +21,9 @@ namespace myengine
 			return; 
 		}
 		
-		// モデルとシェーダーの関連付け
+		// Associate model and shader
 		try {
-			// モデルデータの取得
+			// get Model data
 			auto rendModel = m_model->getModel();
 			if (!rendModel) {
 				std::cout << "Error: Failed to get rend::Model" << std::endl;
@@ -36,10 +36,10 @@ namespace myengine
 			return;
 		}
 
-		// プロジェクション行列の設定
+		// Projection matrix
 		m_shader.projection(rend::perspective(45.0f, 1.0f, 0.1f, 100.0f));
 
-		// ビュー行列の設定（カメラ位置を設定）
+		// view matrix
 		glm::mat4 view = glm::lookAt(
 			glm::vec3(0.0f, 2.0f, 8.0f),  // カメラ位置
 			glm::vec3(0.0f, 0.0f, 0.0f),  // 注視点
@@ -47,29 +47,18 @@ namespace myengine
 		);
 		m_shader.view(view);
 
-		// モデル行列の設定
+		// Model matrix
 		glm::mat4 model = entity()->get_component<HandTransform>()->model();
 		m_shader.model(model);
 
-		// シェーダーの設定
-		m_shader.depth_test(true);  // 深度テストを有効化
-		m_shader.lighting(true);    // ライティングを有効化
-		m_shader.textures(true);    // テクスチャを有効化
+		// shader setting
+		m_shader.depth_test(true);  
+		m_shader.lighting(true);    
+		m_shader.textures(true);    
 		m_shader.color(glm::vec4(1.0));
 
-		// m_mesh.texcoords();
-
-		// モデルの描画
+		// Model rendering
 		m_shader.render();
 		std::cout << "ModelRenderer::on_render" << std::endl;
 	}
 }
-
-//glm::mat4 model(1.0f);
-//// model  = glm::translate(model, glm::vec3(0, 0, -10));
-//model entity()->getComponent<Transform>()->model();
-
-// m_shader->uniform("u_Model", model)
-// 
-// 
-// m_shader.uniform("u_Model", rend::translate(rend::mat4(1.0f), rend::vec3(0.0f, 0.0f, -3.0f));

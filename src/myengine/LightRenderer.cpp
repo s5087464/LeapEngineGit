@@ -20,7 +20,7 @@ namespace myengine
 			return;
 		}
 
-		// モデルとシェーダーの関連付け
+		// Associate model and shader
 		try {
 			// get Model data
 			auto rendModel = m_model->getModel();
@@ -55,8 +55,6 @@ namespace myengine
 		m_shader.lighting(true);    
 		m_shader.textures(true);    
 		m_shader.color(glm::vec4(1.0));
-
-		// m_mesh.texcoords();
 
 		// Model rendering
 		m_shader.render();
