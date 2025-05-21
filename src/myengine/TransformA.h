@@ -12,6 +12,7 @@ namespace myengine
 		void on_initialize();
 		rend::mat4 model();
 		const rend::vec3& position() const { return m_position; }
+		void set_position(const rend::vec3& pos) { m_position = pos; }
 		// const rend::vec3& rotation() const { return m_rotation; }
 
 	private:

@@ -1,6 +1,6 @@
 #include "Collision.h"
 #include "Entity.h"
-
+#include <random>
 
 namespace myengine
 {
@@ -32,19 +32,19 @@ namespace myengine
 		if (CheckCollision())
 		{
 			std::cout << "Collision detected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << std::endl;
-			auto lightRenderer = entity()->get_component<LightRenderer>();
-			if (lightRenderer)
+			
+			// random generate
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_real_distribution<float> dis(-2.8f, 2.8f);  // random -5 to 5
+
+			// random transform
+			auto transformA = entity()->get_component<TransformA>();
+			if (transformA)
 			{
-				lightRenderer->color() = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+				glm::vec3 newPos(dis(gen), dis(gen)+0.5, dis(gen));
+				transformA->set_position(newPos);
 			}
 		}
-		//else
-		//{
-		//	auto lightRenderer = entity()->get_component<LightRenderer>();
-		//	if (lightRenderer)
-		//	{
-		//		lightRenderer->color() = glm::vec4(0.0f, 0.0f, 0.0f, 1.0f);
-		//	}
-		//}
 	}
 }

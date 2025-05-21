@@ -8,12 +8,12 @@ struct Player : Component
 {
 	void on_initialize()
 	{
-		printf("Player::initialize\n");
+		//printf("Player::initialize\n");
 	}
 
 	void on_tick()
 	{
-		printf("Player::tick\n");
+		//printf("Player::tick\n");
 	}
 };
 
@@ -23,12 +23,12 @@ struct Light : Component
 
 	void on_initialize()
 	{
-		printf("Light::initialize\n");
+		//printf("Light::initialize\n");
 	}
 	
 	void on_tick()
 	{
-		printf("Light::tick\n");
+		//printf("Light::tick\n");
 	}
 };
 
@@ -36,12 +36,12 @@ struct Box : Component
 {
 	void on_initialize()
 	{
-		printf("Box::initialize\n");
+		//printf("Box::initialize\n");
 	}
 
 	void on_tick()
 	{
-		printf("Box::tick\n");
+		//printf("Box::tick\n");
 	}
 };
 
