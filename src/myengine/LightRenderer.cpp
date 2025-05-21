@@ -40,9 +40,9 @@ namespace myengine
 
 		// view matrix
 		glm::mat4 view = glm::lookAt(
-			glm::vec3(0.0f, 2.0f, 8.0f),  // ƒJƒƒ‰ˆÊ’u
-			glm::vec3(0.0f, 0.0f, 0.0f),  // ’‹“_
-			glm::vec3(0.0f, 10.0f, 0.0f)   // ã•ûŒü
+			glm::vec3(0.0f, 2.0f, 8.0f), 
+			glm::vec3(0.0f, 0.0f, 0.0f), 
+			glm::vec3(0.0f, 10.0f, 0.0f) 
 		);
 		m_shader.view(view);
 
@@ -54,7 +54,7 @@ namespace myengine
 		m_shader.depth_test(true);  
 		m_shader.lighting(true);    
 		m_shader.textures(true);    
-		m_shader.color(glm::vec4(1.0));
+		m_shader.color(m_color);
 
 		// Model rendering
 		m_shader.render();

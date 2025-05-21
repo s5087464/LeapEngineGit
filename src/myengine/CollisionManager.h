@@ -4,14 +4,14 @@
 
 namespace myengine
 {
-	//struct CollisionManager : Component
-	//{
-	//	/*CollisionManager();*/
+	struct CollisionManager : Component
+	{
+	//	CollisionManager();
 	//	
-	//	void AddCollision(Collision* collision);
+	//	//void AddCollision(Collision collision);
 	//	void CheckCollisions();
 
 	//private:
 	//	std::vector<Collision*> m_collisions;
-	//};
+	};
 }

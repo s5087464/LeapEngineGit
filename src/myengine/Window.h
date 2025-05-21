@@ -14,7 +14,7 @@ namespace myengine
 		SDL_RendContext m_context;
 
 		Window(const Window& _copy);
-		Window& operator=(const Window& _assign);
+		//Window& operator=(const Window& _assign);
 	};
 
 }

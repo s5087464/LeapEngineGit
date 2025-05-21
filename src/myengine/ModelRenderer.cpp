@@ -1,6 +1,8 @@
 #include "ModelRenderer.h"
 #include "Entity.h"
 #include "HandTransform.h"
+#include "BoxRenderer.h"
+#include "TransformA.h"
 
 namespace myengine
 {
@@ -41,9 +43,9 @@ namespace myengine
 
 		// view matrix
 		glm::mat4 view = glm::lookAt(
-			glm::vec3(0.0f, 2.0f, 8.0f),  // カメラ位置
-			glm::vec3(0.0f, 0.0f, 0.0f),  // 注視点
-			glm::vec3(0.0f, 10.0f, 0.0f)   // 上方向
+			glm::vec3(0.0f, 2.0f, 8.0f),
+			glm::vec3(0.0f, 0.0f, 0.0f),
+			glm::vec3(0.0f, 10.0f, 0.0f) 
 		);
 		m_shader.view(view);
 
@@ -62,3 +64,12 @@ namespace myengine
 		std::cout << "ModelRenderer::on_render" << std::endl;
 	}
 }
+
+//glm::mat4 model(1.0f);
+//// model  = glm::translate(model, glm::vec3(0, 0, -10));
+//model entity()->getComponent<Transform>()->model();
+
+// m_shader->uniform("u_Model", model)
+// 
+// 
+// m_shader.uniform("u_Model", rend::translate(rend::mat4(1.0f), rend::vec3(0.0f, 0.0f, -3.0f));

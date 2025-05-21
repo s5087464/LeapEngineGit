@@ -33,7 +33,6 @@ namespace myengine
 		}
 	}
 
-	//
 
 	glm::mat4 HandTransform::model()
 	{
@@ -50,7 +49,7 @@ namespace myengine
 }
 
 
-//// コールバックの設定
+//// callback
 //ConnectionCallbacks.on_frame = [this](const LEAP_TRACKING_EVENT* tracking_event) {
 //	if (tracking_event->nHands > 0)
 //	{

@@ -64,8 +64,7 @@ int main()
 	// Leap
 	std::shared_ptr<HandTransform> ht = entity->add_component<HandTransform>();
 	ht->on_tick();
-	// Collision
-	// std::shared_ptr<Collision> co = entity->add_component<Collision>();
+	
 	
 
 	//////////////////////////////////////////////////////////////////
@@ -94,7 +93,10 @@ int main()
 	std::shared_ptr <BoxModel> switchBox = core->resources()->load<BoxModel>("models/switch/SwitchA");
 	std::shared_ptr<BoxRenderer> br = boxEntity->add_component<BoxRenderer>();
 	br->setModel(switchBox);
-	std::shared_ptr<TransformA> ta = entity->add_component<TransformA>();
+	std::shared_ptr<TransformA> ta = boxEntity->add_component<TransformA>();
+	// Collision
+	std::shared_ptr<Collision> co = boxEntity->add_component<Collision>();
+	//std::shared_ptr<CollisionManager> cm = boxEntity->add_component<CollisionManager>();
 
 
 	

@@ -109,13 +109,17 @@ namespace myengine
 				}
 			}
 
+			// クリアカラーの設定（例：青色）
+			glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+			// バッファのクリア
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			for (size_t ei = 0; ei < m_entities.size(); ++ei)
 			{
 				m_entities.at(ei)->tick();
 			}
 
-			SDL_Rend_ClearWindow(m_window->m_raw);
+			// SDL_Rend_ClearWindow(m_window->m_raw);
 
 
 

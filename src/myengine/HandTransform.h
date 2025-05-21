@@ -9,7 +9,7 @@
 
 namespace myengine
 {
-	struct LeapInitialize;  // 前方宣言
+	struct LeapInitialize;
 
 	struct HandTransform : Component
 	{

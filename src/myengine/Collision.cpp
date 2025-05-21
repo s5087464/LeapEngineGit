@@ -1,28 +1,50 @@
 #include "Collision.h"
 #include "Entity.h"
-#include "HandTransform.h"
-#include "TransformA.h"
+
 
 namespace myengine
 {
-	//Collision::Collision()
-	//{
-	//}
+	Collision::Collision()
+	{
+	}
 
-	//bool Collision::CheckCollision(Collision* other)
-	//{
-	//	if (!other) return false;
+	bool Collision::CheckCollision()
+	{
+		auto transformA = entity()->get_component<TransformA>();
+		auto handTransform = entity()->get_component<HandTransform>();
 
-	//	// Transformから位置を取得
-	//	glm::vec3 pos1 = entity()->get_component<TransformA>()->position();
-	//	glm::vec3 pos2 = other->entity()->get_component<HandTransform>()->position();
+		// get position data from both transform
+		glm::vec3 boxPos = transformA->position();
+		glm::vec3 handPos = handTransform->position();
 
-	//	// シンプルなAABB衝突判定
-	//	return (pos1.x - m_size.x/2 <= pos2.x + other->m_size.x/2 &&
-	//			pos1.x + m_size.x/2 >= pos2.x - other->m_size.x/2 &&
-	//			pos1.y - m_size.y/2 <= pos2.y + other->m_size.y/2 &&
-	//			pos1.y + m_size.y/2 >= pos2.y - other->m_size.y/2 &&
-	//			pos1.z - m_size.z/2 <= pos2.z + other->m_size.z/2 &&
-	//			pos1.z + m_size.z/2 >= pos2.z - other->m_size.z/2);
-	//}
+		// return by AABB detction
+		return (boxPos.x - m_size.x / 2 <= handPos.x + m_size.x / 2 &&
+			boxPos.x + m_size.x / 2 >= handPos.x - m_size.x / 2 &&
+			boxPos.y - m_size.y / 2 <= handPos.y + m_size.y / 2 &&
+			boxPos.y + m_size.y / 2 >= handPos.y - m_size.y / 2 &&
+			boxPos.z - m_size.z / 2 <= handPos.z + m_size.z * 3/2 &&
+			boxPos.z + m_size.z / 2 >= handPos.z - m_size.z * 3/2);
+	}
+
+	void Collision::on_tick()
+	{
+		// if collision is happened
+		if (CheckCollision())
+		{
+			std::cout << "Collision detected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << std::endl;
+			auto lightRenderer = entity()->get_component<LightRenderer>();
+			if (lightRenderer)
+			{
+				lightRenderer->color() = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+			}
+		}
+		//else
+		//{
+		//	auto lightRenderer = entity()->get_component<LightRenderer>();
+		//	if (lightRenderer)
+		//	{
+		//		lightRenderer->color() = glm::vec4(0.0f, 0.0f, 0.0f, 1.0f);
+		//	}
+		//}
+	}
 }
