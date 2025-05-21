@@ -31,8 +31,6 @@ namespace myengine
 		// if collision is happened
 		if (CheckCollision())
 		{
-			std::cout << "Collision detected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << std::endl;
-			
 			// random generate
 			std::random_device rd;
 			std::mt19937 gen(rd());
@@ -44,6 +42,8 @@ namespace myengine
 			{
 				glm::vec3 newPos(dis(gen), dis(gen)+0.5, dis(gen));
 				transformA->set_position(newPos);
+
+				std::cout << "\nCollision detected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" << std::endl;
 			}
 		}
 	}

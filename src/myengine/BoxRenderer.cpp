@@ -60,6 +60,6 @@ namespace myengine
 
 		// Model rendering
 		m_shader.render();
-		std::cout << "BoxRenderer::on_render" << std::endl;
+		// std::cout << "BoxRenderer::on_render" << std::endl;
 	}
 }
