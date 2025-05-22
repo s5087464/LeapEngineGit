@@ -22,8 +22,8 @@ namespace myengine
 			boxPos.x + m_size.x / 2 >= handPos.x - m_size.x / 2 &&
 			boxPos.y - m_size.y / 2 <= handPos.y + m_size.y / 2 &&
 			boxPos.y + m_size.y / 2 >= handPos.y - m_size.y / 2 &&
-			boxPos.z - m_size.z / 2 <= handPos.z + m_size.z * 3/2 &&
-			boxPos.z + m_size.z / 2 >= handPos.z - m_size.z * 3/2);
+			boxPos.z - m_size.z / 2 <= handPos.z + m_size.z * 5/4 &&
+			boxPos.z + m_size.z / 2 >= handPos.z - m_size.z * 5/4);
 	}
 
 	void Collision::on_tick()
@@ -40,7 +40,7 @@ namespace myengine
 			auto transformA = entity()->get_component<TransformA>();
 			if (transformA)
 			{
-				glm::vec3 newPos(dis(gen), dis(gen)+0.5, dis(gen));
+				glm::vec3 newPos(dis(gen), dis(gen)+1, dis(gen));
 				transformA->set_position(newPos);
 
 				std::cout << "\nCollision detected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" << std::endl;

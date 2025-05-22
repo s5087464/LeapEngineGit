@@ -109,9 +109,9 @@ namespace myengine
 				}
 			}
 
-			// クリアカラーの設定（例：青色）
+			// color
 			glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-			// バッファのクリア
+			// clear buffer
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			for (size_t ei = 0; ei < m_entities.size(); ++ei)
