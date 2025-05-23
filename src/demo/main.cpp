@@ -65,20 +65,6 @@ int main()
 	std::shared_ptr<HandTransform> ht = entity->add_component<HandTransform>();
 	ht->on_tick();
 	
-	
-
-	//////////////////////////////////////////////////////////////////
-	// Lighting
-	//////////////////////////////////////////////////////////////////
-	// Create a hand entity
-	std::shared_ptr <Entity> lightEntity = core->add_entity();
-	// Add a hand component to the hand entity
-	std::shared_ptr <Light> light = lightEntity->add_component<Light>();
-	// Model
-	std::cout << "Loading light" << std::endl;
-	std::shared_ptr <LightModel> lighting = core->resources()->load<LightModel>("models/switch/light");
-	std::shared_ptr<LightRenderer> lr = lightEntity->add_component<LightRenderer>();
-	lr->setModel(lighting);
 
 
 	//////////////////////////////////////////////////////////////////
@@ -99,6 +85,19 @@ int main()
 	//std::shared_ptr<CollisionManager> cm = boxEntity->add_component<CollisionManager>();
 
 
+
+	//////////////////////////////////////////////////////////////////
+	// Lighting
+	//////////////////////////////////////////////////////////////////
+	// Create a hand entity
+	std::shared_ptr <Entity> lightEntity = core->add_entity();
+	// Add a hand component to the hand entity
+	std::shared_ptr <Light> light = lightEntity->add_component<Light>();
+	// Model
+	std::cout << "Loading light" << std::endl;
+	std::shared_ptr <LightModel> lighting = core->resources()->load<LightModel>("models/switch/light");
+	std::shared_ptr<LightRenderer> lr = lightEntity->add_component<LightRenderer>();
+	lr->setModel(lighting);
 	
 	// Add a triangle renderer component to the player entity
 	// std::shared_ptr <TriangleRenderer> tr = entity->add_component<TriangleRenderer>();
@@ -109,12 +108,14 @@ int main()
 	//entity->get_component<Transform>()->set_position(glm::vec3(10, 40, 3));
 
 
-	// Audio
-	std::shared_ptr <Sound> sound = core->resources()->load<Sound>("sounds/gamestart");
+	
 
 	// Texture
 	// std::shared_ptr <Texture> texture = core->resources()->load<Texture>("textures/cat");
 	//tr->SetTexture(texture);
+
+	// Audio
+	std::shared_ptr <Sound> sound = core->resources()->load<Sound>("sounds/gamestart");
 
 	core->run();
 

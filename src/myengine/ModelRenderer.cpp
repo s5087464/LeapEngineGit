@@ -1,7 +1,7 @@
 #include "ModelRenderer.h"
 #include "Entity.h"
 #include "HandTransform.h"
-#include "BoxRenderer.h"
+// #include "BoxRenderer.h"
 #include "TransformA.h"
 
 namespace myengine
